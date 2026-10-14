@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\LessonOhs\\_git\\26310048_suyeon_GameCraft\\src\\ActionGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ActionGame.csproj|c:\\lessonohs\\_git\\26310048_suyeon_gamecraft\\src\\actiongame\\appmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ActionGame.csproj|solutionrelative:appmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ActionGame.csproj|c:\\lessonohs\\_git\\26310048_suyeon_gamecraft\\src\\actiongame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ActionGame.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ActionGame.csproj|c:\\lessonohs\\_git\\26310048_suyeon_gamecraft\\src\\actiongame\\actiongame.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ActionGame.csproj|solutionrelative:actiongame.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,12 +27,37 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AppMain.cs",
+              "DocumentMoniker": "C:\\LessonOhs\\_git\\26310048_suyeon_GameCraft\\src\\ActionGame\\AppMain.cs",
+              "RelativeDocumentMoniker": "AppMain.cs",
+              "ToolTip": "C:\\LessonOhs\\_git\\26310048_suyeon_GameCraft\\src\\ActionGame\\AppMain.cs",
+              "RelativeToolTip": "AppMain.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-14T03:19:46.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ActionGame",
+              "DocumentMoniker": "C:\\LessonOhs\\_git\\26310048_suyeon_GameCraft\\src\\ActionGame\\ActionGame.csproj",
+              "RelativeDocumentMoniker": "ActionGame.csproj",
+              "ToolTip": "C:\\LessonOhs\\_git\\26310048_suyeon_GameCraft\\src\\ActionGame\\ActionGame.csproj",
+              "RelativeToolTip": "ActionGame.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-14T03:14:09.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\LessonOhs\\_git\\26310048_suyeon_GameCraft\\src\\ActionGame\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\LessonOhs\\_git\\26310048_suyeon_GameCraft\\src\\ActionGame\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-14T03:01:43.564Z",
               "EditorCaption": ""
