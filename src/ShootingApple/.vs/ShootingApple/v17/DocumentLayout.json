@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\shootingapple.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:shootingapple.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\gamemain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:gamemain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\gameglobal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:gameglobal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameGlobal.cs",
+              "DocumentMoniker": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\GameGlobal.cs",
+              "RelativeDocumentMoniker": "GameGlobal.cs",
+              "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\GameGlobal.cs",
+              "RelativeToolTip": "GameGlobal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T11:45:56.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShootingApple.csproj",
+              "DocumentMoniker": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\ShootingApple.csproj",
+              "RelativeDocumentMoniker": "ShootingApple.csproj",
+              "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\ShootingApple.csproj",
+              "RelativeToolTip": "ShootingApple.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-16T10:17:15.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameMain.cs",
+              "DocumentMoniker": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\GameMain.cs",
+              "RelativeDocumentMoniker": "GameMain.cs",
+              "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\GameMain.cs",
+              "RelativeToolTip": "GameMain.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T10:11:52.162Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
