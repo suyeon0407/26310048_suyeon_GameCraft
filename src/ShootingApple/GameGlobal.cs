@@ -5,6 +5,6 @@
 public static class GameGlobal
 {
     public static readonly System.Drawing.Size ScreenSize =
-        new System.Drawing.Size(640, 350);
+        new System.Drawing.Size(360, 540);
     public static readonly string GameName = "Nemo .....";
 }

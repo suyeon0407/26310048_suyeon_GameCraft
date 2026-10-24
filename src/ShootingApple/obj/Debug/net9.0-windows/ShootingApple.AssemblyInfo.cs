@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShootingApple")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f873696f3a4edfae9a9f5acd17ae89d0665760f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1af6eab02b7376cc66e04b0699c92cf1919cc5a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShootingApple")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShootingApple")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
