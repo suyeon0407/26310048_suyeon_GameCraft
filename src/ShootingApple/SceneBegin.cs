@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vortice.Mathematics;
+using System.Windows.Forms;
 
 namespace ShootingApple
 {
@@ -21,9 +22,23 @@ namespace ShootingApple
         private G2Texture? _exitButton1;
         private G2Texture? _exitButton2;
 
+        private const float StartButtonWidth = 110.0f;
+        private const float StartButtonHeight = 39.0f;
+
+        private const float StartButtonY = 310.0f;
+
+        private bool _startPressed = false;
+
+        private bool _startWaiting = false;
+
         override public void Init()
         {
+            _startPressed = false;
+            _startWaiting = false;
+
             base.Init();
+
+            _startPressed = false;
 
             _blackHalfScreen =
                 new("resource/Black_Half_Screen1.png");
@@ -52,6 +67,62 @@ namespace ShootingApple
 
         override public void Update()
         {
+            var input =
+                G2AppBase.Instance?.Input;
+
+            if (input == null)
+                return;
+
+            if (_startWaiting)
+            {
+                if (_buttonSoundOutput == null ||
+                    _buttonSoundOutput.PlaybackState
+                        != NAudio.Wave.PlaybackState.Playing)
+                {
+                    RequestScene(
+                        SCENE_PHASE_PLAY);
+                }
+
+                return;
+            }
+
+
+            var mouse =
+                input.MousePosition;
+
+            float startX =
+                (ScreenWidth - StartButtonWidth)
+                / 2.0f;
+
+            bool startInside =
+                IsInside(
+                    mouse.X,
+                    mouse.Y,
+                    startX,
+                    StartButtonY,
+                    StartButtonWidth,
+                    StartButtonHeight);
+
+
+            if (input.IsButtonDown(MouseButtons.Left))
+            {
+                if (startInside)
+                {
+                    _startPressed = true;
+
+                    PlayButtonSound();
+                }
+            }
+
+            if (input.IsButtonUp(MouseButtons.Left))
+            {
+                if (_startPressed && startInside)
+                {
+                    _startWaiting = true;
+                }
+
+                _startPressed = false;
+            }
         }
 
         override public void Render()
@@ -78,10 +149,20 @@ namespace ShootingApple
                 134.0f,
                 190.0f);
 
-            DrawCenter(
-                _startButton1,
-                110.0f,
-                300.0f);
+            if (_startPressed)
+            {
+                DrawCenter(
+                    _startButton2,
+                    StartButtonWidth,
+                    StartButtonY);
+            }
+            else
+            {
+                DrawCenter(
+                    _startButton1,
+                    StartButtonWidth,
+                    StartButtonY);
+            }
 
             DrawCenter(
                 _howToPlayButton1,

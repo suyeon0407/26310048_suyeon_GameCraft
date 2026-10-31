@@ -34,16 +34,6 @@ C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\obj\Debug\net9.0-windows
 C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\obj\Debug\net9.0-windows\ShootingApple.pdb
 C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\obj\Debug\net9.0-windows\ShootingApple.genruntimeconfig.cache
 C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\obj\Debug\net9.0-windows\ref\ShootingApple.dll
-C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\0_Text.png
-C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\1_Text.png
-C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\2_Text.png
-C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\3_Text.png
-C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\4_Text.png
-C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\5_Text.png
-C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\6_Text.png
-C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\7_Text.png
-C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\8_Text.png
-C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\9_Text.png
 C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\BackGround.png
 C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\BasketBack1.png
 C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\BasketBack2.png
@@ -94,3 +84,6 @@ C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows
 C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\TimeText1.png
 C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\Tree1.png
 C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\Tree2.png
+C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\Sound\ButtonClick.wav
+C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\Sound\WalkSound.wav
+C:\Git\_git\26310048_suyeon_GameCraft\src\ShootingApple\bin\Debug\net9.0-windows\resource\Sound\BGM.wav

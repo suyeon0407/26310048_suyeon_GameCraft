@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Vortice.Mathematics;
+using Vortice.XInput;
+using NAudio.Wave;
 
 namespace ShootingApple
 {
@@ -14,11 +18,6 @@ namespace ShootingApple
         private G2Texture?[] _idleWalk =
             new G2Texture?[5];
 
-        private G2Texture?[] _numbers =
-            new G2Texture?[10];
-
-        private G2Texture? _timeText;
-        private G2Texture? _scoreText;
         private G2Texture? _controlText;
 
         private G2Texture? _normalApple;
@@ -26,13 +25,78 @@ namespace ShootingApple
         private G2Texture? _rottenApple;
         private G2Texture? _bugApple;
 
+        private G2Texture? _point;
+
+        private WaveOut? _walkSoundOutput;
+        private AudioFileReader? _walkSoundReader;
+
         private int _score = 0;
         private int _timeLeft = 80;
 
-        private const float DigitStep = 12.0f;
+        private const float MoveSpeed = 1.0f;
+
+        private int _walkFrame = 0;
+        private int _walkFrameCounter = 0;
+
+        private float _walkPhase = 0.0f;
+
+        private const int WalkFrameDelay = 18;
+        private const float WalkBobAmount = 1.0f;
+        private const float WalkBobSpeed = 0.07f;
+
+        private const float AppleMinDistance = 22.0f;
+
+        private class AppleData
+        {
+            public float WorldX;
+            public float Y;
+
+            public float StartY;
+
+            public int Value;
+            public int Type;
+
+            public bool IsFront;
+
+            public double SpawnTime;
+
+            public bool IsFalling;
+        }
+
+        private List<AppleData> _apples =
+          new List<AppleData>();
+
+        private HashSet<int> _spawnedBackTrees =
+            new HashSet<int>();
+
+        private HashSet<int> _spawnedFrontTrees =
+            new HashSet<int>();
+
+        private Random _random =
+            new Random();
 
         override public void Init()
         {
+            base.Init();
+
+            Cursor.Hide();
+
+            _point =
+                new G2Texture(
+                    "resource/Point1.png");
+
+            _walkSoundReader =
+            new AudioFileReader(
+              "resource/Sound/WalkSound.wav");
+
+            _walkSoundReader.Volume = 0.40f;
+
+            _walkSoundOutput =
+                new WaveOut();
+
+            _walkSoundOutput.Init(
+                _walkSoundReader);
+
             base.Init();
 
             _basketBack1 =
@@ -48,19 +112,6 @@ namespace ShootingApple
                         $"resource/IdleWalk_Gun{i + 1}.png");
             }
 
-            for (int i = 0; i < 10; i++)
-            {
-                _numbers[i] =
-                    new G2Texture(
-                        $"resource/{i}_Text.png");
-            }
-
-            _timeText =
-                new("resource/TimeText1.png");
-
-            _scoreText =
-                new("resource/ScoreText1.png");
-
             _controlText =
                 new("resource/ControlText.png");
 
@@ -75,10 +126,53 @@ namespace ShootingApple
 
             _bugApple =
                 new("resource/BugApple.png");
+
+            _walkFrame = 0;
+            _walkFrameCounter = 0;
+
+            _walkPhase = 0.0f;
+            _cameraBobY = 0.0f;
+
+            SpawnApplesForTree(0, false);
+            SpawnApplesForTree(1, false);
+
+            SpawnApplesForTree(0, true);
+            SpawnApplesForTree(1, true);
         }
 
         override public void Update()
         {
+            var input =
+                G2AppBase.Instance?.Input;
+
+            if (input == null)
+                return;
+
+            bool moveLeft =
+                input.IsKeyDown(Keys.A) ||
+                input.IsKeyPress(Keys.A);
+
+            bool moveRight =
+                input.IsKeyDown(Keys.D) ||
+                input.IsKeyPress(Keys.D);
+
+
+            if (moveLeft && !moveRight)
+            {
+                _cameraX -= MoveSpeed;
+            }
+
+            if (moveRight && !moveLeft)
+            {
+                _cameraX += MoveSpeed;
+            }
+
+
+            bool isMoving =
+                moveLeft ^ moveRight;
+
+            UpdateWalkAnimation(isMoving);
+            UpdateWalkSound(isMoving);
         }
 
         override public void Render()
@@ -87,13 +181,33 @@ namespace ShootingApple
             DrawGround();
 
             DrawFence();
+
             DrawBackTrees();
+            DrawApples(false);
+
             DrawFrontTrees();
+            DrawApples(true);
 
             DrawPlayer();
             DrawPlayUI();
 
-            DrawTestApples();
+            DrawCrosshair();
+        }
+
+        private void DrawCrosshair()
+        {
+            var input =
+                G2AppBase.Instance?.Input;
+
+            if (input == null)
+                return;
+
+            var mouse =
+                input.MousePosition;
+
+            _point?.Draw(
+                mouse.X - 12.0f,
+                mouse.Y - 12.0f);
         }
 
         private void DrawPlayer()
@@ -103,11 +217,18 @@ namespace ShootingApple
                 70.0f,
                 285.0f);
 
-            DrawBottomCenter(
-                _idleWalk[0],
-                96.0f,
-                110.0f,
-                92.0f);
+            float gunX =
+                (ScreenWidth - 96.0f) / 2.0f
+                - 25.0f;
+
+            float gunY =
+                ScreenHeight
+                - 110.0f
+                - 92.0f;
+
+            _idleWalk[_walkFrame]?.Draw(
+                gunX,
+                gunY);
 
             DrawCenter(
                 _basketFront1,
@@ -115,97 +236,234 @@ namespace ShootingApple
                 285.0f);
         }
 
-        private void DrawNumber(
-            int number,
-            float x,
-            float y)
-        {
-            string text =
-                number.ToString();
-
-            float currentX = x;
-
-            foreach (char ch in text)
-            {
-                int index =
-                    ch - '0';
-
-                _numbers[index]?.Draw(
-                    currentX,
-                    y);
-
-                currentX += DigitStep;
-            }
-        }
-
-        private float GetNumberWidth(
-            int number)
-        {
-            return
-                number.ToString().Length
-                * DigitStep;
-        }
-
         private void DrawPlayUI()
         {
-            const float topY = 10.0f;
+            _messageFont?.DrawText(
+                $"Time : {_timeLeft}",
+                new Rect(
+                    5.0f,
+                    5.0f,
+                    100.0f,
+                    30.0f),
+                new Color4(
+                    0.0f,
+                    0.0f,
+                    0.0f,
+                    1.0f)
+            );
 
-            _timeText?.Draw(
-                10.0f,
-                topY);
-
-            DrawNumber(
-                _timeLeft,
-                42.0f,
-                topY - 2.0f);
-
-            float scoreWidth =
-                GetNumberWidth(_score);
-
-            float scoreValueX =
-                ScreenWidth
-                - 10.0f
-                - scoreWidth;
-
-            float scoreLabelX =
-                scoreValueX
-                - 34.0f;
-
-            _scoreText?.Draw(
-                scoreLabelX,
-                topY);
-
-            DrawNumber(
-                _score,
-                scoreValueX,
-                topY - 2.0f);
+            _messageFont?.DrawText(
+                $"Score : {_score}",
+                new Rect(
+                    ScreenWidth - 105.0f,
+                    5.0f,
+                    100.0f,
+                    30.0f),
+                new Color4(
+                    0.0f,
+                    0.0f,
+                    0.0f,
+                    1.0f)
+            );
 
             _controlText?.Draw(
                 ScreenWidth - 51.0f,
                 ScreenHeight - 47.0f);
         }
-
-        private void DrawTestApples()
+        private void SpawnApplesForTree(
+            int treeIndex,
+            bool isFront)
         {
-            _normalApple?.Draw(
-                250.0f,
-                120.0f);
+            float treeWorldX;
+            float treeY;
 
-            _goldApple?.Draw(
-                285.0f,
-                120.0f);
+            if (isFront)
+            {
+                treeWorldX =
+                    treeIndex * TreeSpacing
+                    + FrontTreeOffsetX;
 
-            _rottenApple?.Draw(
-                320.0f,
-                120.0f);
+                treeY = FrontTreeY;
+            }
+            else
+            {
+                treeWorldX =
+                    treeIndex * TreeSpacing;
 
-            _bugApple?.Draw(
-                355.0f,
-                120.0f);
+                treeY = BackTreeY;
+            }
+
+            int appleCount =
+                _random.Next(1, 4);
+
+            for (int i = 0; i < appleCount; i++)
+            {
+                float appleX = 0.0f;
+                float appleY = 0.0f;
+
+                bool validPosition = false;
+
+                for (int attempt = 0;
+                     attempt < 20;
+                     attempt++)
+                {
+                    appleX =
+                        treeWorldX
+                        + _random.Next(12, 59);
+
+                    appleY =
+                        treeY
+                        + _random.Next(8, 39);
+
+                    validPosition = true;
+
+                    foreach (AppleData other in _apples)
+                    {
+                        if (other.IsFront != isFront)
+                            continue;
+
+                        float dx =
+                            appleX - other.WorldX;
+
+                        float dy =
+                            appleY - other.Y;
+
+                        float distance =
+                            MathF.Sqrt(
+                                dx * dx +
+                                dy * dy);
+
+                        if (distance < AppleMinDistance)
+                        {
+                            validPosition = false;
+                            break;
+                        }
+                    }
+
+                    if (validPosition)
+                        break;
+                }
+
+                if (!validPosition)
+                    continue;
+
+                AppleData apple =
+                    new AppleData();
+
+                apple.WorldX = appleX;
+                apple.Y = appleY;
+                apple.StartY = appleY;
+
+                apple.Value =
+                    _random.Next(1, 10);
+
+                apple.Type =
+                    _random.Next(0, 4);
+
+                apple.IsFront =
+                    isFront;
+
+                apple.IsFalling =
+                    false;
+
+                _apples.Add(apple);
+            }
+        }
+
+        private void DrawApples(bool isFront)
+        {
+            foreach (AppleData apple in _apples)
+            {
+                if (apple.IsFront != isFront)
+                    continue;
+
+                float drawX =
+                    apple.WorldX - _cameraX;
+
+                G2Texture? texture =
+                    apple.Type switch
+                    {
+                        0 => _normalApple,
+                        1 => _goldApple,
+                        2 => _rottenApple,
+                        3 => _bugApple,
+                        _ => _normalApple
+                    };
+
+                texture?.Draw(
+                    drawX,
+                    apple.Y + _cameraBobY);
+            }
+        }
+
+        private void UpdateWalkSound(bool isMoving)
+        {
+            if (_walkSoundOutput == null ||
+                _walkSoundReader == null)
+            {
+                return;
+            }
+
+            if (isMoving)
+            {
+                if (_walkSoundOutput.PlaybackState
+                    != PlaybackState.Playing)
+                {
+                    _walkSoundReader.Position = 0;
+                    _walkSoundOutput.Play();
+                }
+            }
+            else
+            {
+                if (_walkSoundOutput.PlaybackState
+                    == PlaybackState.Playing)
+                {
+                    _walkSoundOutput.Stop();
+                    _walkSoundReader.Position = 0;
+                }
+            }
+        }
+
+        private void UpdateWalkAnimation(
+        bool isMoving)
+        {
+            if (isMoving)
+            {
+                _walkFrameCounter++;
+
+                if (_walkFrameCounter >= WalkFrameDelay)
+                {
+                    _walkFrameCounter = 0;
+
+                    _walkFrame++;
+
+                    if (_walkFrame >= 5)
+                    {
+                        _walkFrame = 0;
+                    }
+                }
+
+                _walkPhase += WalkBobSpeed;
+
+                _cameraBobY =
+                    MathF.Sin(_walkPhase)
+                    * WalkBobAmount;
+            }
+            else
+            {
+                _walkFrame = 0;
+                _walkFrameCounter = 0;
+
+                _walkPhase = 0.0f;
+                _cameraBobY = 0.0f;
+            }
         }
 
         override public void Destroy()
         {
+            Cursor.Show();
+            _point?.Dispose();
+
             _basketBack1?.Dispose();
             _basketFront1?.Dispose();
 
@@ -214,19 +472,17 @@ namespace ShootingApple
                 texture?.Dispose();
             }
 
-            foreach (var texture in _numbers)
-            {
-                texture?.Dispose();
-            }
-
-            _timeText?.Dispose();
-            _scoreText?.Dispose();
             _controlText?.Dispose();
 
             _normalApple?.Dispose();
             _goldApple?.Dispose();
             _rottenApple?.Dispose();
             _bugApple?.Dispose();
+
+            _walkSoundOutput?.Stop();
+            _walkSoundOutput?.Dispose();
+
+            _walkSoundReader?.Dispose();
 
             base.Destroy();
         }

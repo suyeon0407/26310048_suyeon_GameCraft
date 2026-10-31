@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vortice.DirectWrite;
+using NAudio.Wave;
 
 namespace ShootingApple
 {
@@ -22,7 +24,13 @@ namespace ShootingApple
         protected G2Texture? _tree1;
         protected G2Texture? _tree2;
 
+        protected G2Font? _messageFont;
+
+        protected WaveOut? _buttonSoundOutput;
+        protected AudioFileReader? _buttonSoundReader;
+
         protected float _cameraX = 0.0f;
+        protected float _cameraBobY = 0.0f;
 
         protected const float SkyWidth = 135.0f;
         protected const float SkyHeight = 86.0f;
@@ -40,8 +48,37 @@ namespace ShootingApple
 
         protected const float FrontTreeOffsetX = 60.0f;
 
+        public int NextScene = -1;
+
+        protected void RequestScene(int scenePhase)
+        {
+            NextScene = scenePhase;
+        }
+
+
         virtual public void Init()
         {
+
+            _buttonSoundReader =
+            new AudioFileReader(
+             "resource/Sound/ButtonClick.wav");
+
+            _buttonSoundReader.Volume = 0.55f;
+
+            _buttonSoundOutput =
+                new WaveOut();
+
+            _buttonSoundOutput.Init(
+                _buttonSoundReader);
+
+            NextScene = -1;
+
+            _messageFont = new G2Font(
+            "Arial",
+            14.0f,
+            textAlignment: TextAlignment.Center,
+            paragraphAlignment: ParagraphAlignment.Center
+            );
 
             _skyBackground =
                 new("resource/SkyBackGround.png");
@@ -59,6 +96,21 @@ namespace ShootingApple
                 new("resource/Tree2.png");
         }
 
+        protected void PlayButtonSound()
+        {
+            if (_buttonSoundOutput == null ||
+                _buttonSoundReader == null)
+            {
+                return;
+            }
+
+            _buttonSoundOutput.Stop();
+
+            _buttonSoundReader.Position = 0;
+
+            _buttonSoundOutput.Play();
+        }
+
         protected void DrawCenter(
          G2Texture? texture,
           float width,
@@ -68,6 +120,21 @@ namespace ShootingApple
                 (ScreenWidth - width) / 2.0f;
 
             texture?.Draw(x, y);
+        }
+
+        protected bool IsInside(
+            float mouseX,
+            float mouseY,
+            float x,
+            float y,
+            float width,
+            float height)
+        {
+            return
+                mouseX >= x &&
+                mouseX <= x + width &&
+                mouseY >= y &&
+                mouseY <= y + height;
         }
 
         protected void DrawRight(
@@ -103,12 +170,18 @@ namespace ShootingApple
 
         virtual public void Destroy()
         {
+            _messageFont?.Dispose();
             _skyBackground?.Dispose();
             _background?.Dispose();
             _fence?.Dispose();
 
             _tree1?.Dispose();
             _tree2?.Dispose();
+
+            _buttonSoundOutput?.Stop();
+            _buttonSoundOutput?.Dispose();
+
+            _buttonSoundReader?.Dispose();
         }
 
         virtual public void Update()
@@ -186,7 +259,7 @@ namespace ShootingApple
 
                     _background.Draw(
                         drawX,
-                        y);
+                        y + _cameraBobY);
                 }
             }
         }
@@ -218,7 +291,7 @@ namespace ShootingApple
 
                 _fence.Draw(
                     drawX,
-                    FenceY);
+                    FenceY + _cameraBobY);
             }
         }
 
@@ -249,13 +322,13 @@ namespace ShootingApple
                 {
                     _tree2?.Draw(
                         drawX,
-                        FrontTreeY);
+                        FrontTreeY + _cameraBobY);
                 }
                 else
                 {
                     _tree1?.Draw(
                         drawX,
-                        FrontTreeY);
+                        FrontTreeY + _cameraBobY);
                 }
             }
         }
@@ -286,13 +359,13 @@ namespace ShootingApple
                 {
                     _tree1?.Draw(
                         drawX,
-                        BackTreeY);
+                        BackTreeY + _cameraBobY);
                 }
                 else
                 {
                     _tree2?.Draw(
                         drawX,
-                        BackTreeY);
+                        BackTreeY + _cameraBobY);
                 }
             }
         }

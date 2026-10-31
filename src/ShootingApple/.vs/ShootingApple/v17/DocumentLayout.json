@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\gamemain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:gamemain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\shootingapple.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:shootingapple.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\sceneplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:sceneplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\scenelobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:scenelobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\gamemain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:gamemain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\scenebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:scenebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\scenelobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:scenelobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\sceneresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:sceneresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\shootingapple.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|solutionrelative:shootingapple.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B63F4915-2159-4EE2-B3AB-5BAB4CFF0FA4}|ShootingApple.csproj|c:\\git\\_git\\26310048_suyeon_gamecraft\\src\\shootingapple\\scenebegin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,8 +42,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SceneBegin.cs",
+              "DocumentMoniker": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\SceneBegin.cs",
+              "RelativeDocumentMoniker": "SceneBegin.cs",
+              "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\SceneBegin.cs",
+              "RelativeToolTip": "SceneBegin.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAiwEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T09:32:41.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SceneBase.cs",
+              "DocumentMoniker": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\SceneBase.cs",
+              "RelativeDocumentMoniker": "SceneBase.cs",
+              "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\SceneBase.cs",
+              "RelativeToolTip": "SceneBase.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAgwEMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T09:32:02.817Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 7,
@@ -58,37 +83,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SceneBegin.cs",
-              "DocumentMoniker": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\SceneBegin.cs",
-              "RelativeDocumentMoniker": "SceneBegin.cs",
-              "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\SceneBegin.cs",
-              "RelativeToolTip": "SceneBegin.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAADwvxwAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-21T09:32:41.715Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SceneBase.cs",
-              "DocumentMoniker": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\SceneBase.cs",
-              "RelativeDocumentMoniker": "SceneBase.cs",
-              "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\SceneBase.cs",
-              "RelativeToolTip": "SceneBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-21T09:32:02.817Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "SceneResult.cs",
               "DocumentMoniker": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\SceneResult.cs",
               "RelativeDocumentMoniker": "SceneResult.cs",
               "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\SceneResult.cs",
               "RelativeToolTip": "SceneResult.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAmwEAAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-21T09:27:27.897Z"
             },
@@ -100,45 +101,44 @@
               "RelativeDocumentMoniker": "SceneLobby.cs",
               "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\SceneLobby.cs",
               "RelativeToolTip": "SceneLobby.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAIwCIAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-21T09:26:56.416Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ScenePlay.cs",
               "DocumentMoniker": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\ScenePlay.cs",
               "RelativeDocumentMoniker": "ScenePlay.cs",
               "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\ScenePlay.cs",
               "RelativeToolTip": "ScenePlay.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAmwF4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAL0BAAAAAAAAAAAuwNEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-21T09:26:34.374Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ShootingApple.csproj",
               "DocumentMoniker": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\ShootingApple.csproj",
               "RelativeDocumentMoniker": "ShootingApple.csproj",
               "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\ShootingApple.csproj",
               "RelativeToolTip": "ShootingApple.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-10-16T10:17:15.473Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-16T10:17:15.473Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GameMain.cs",
               "DocumentMoniker": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\GameMain.cs",
               "RelativeDocumentMoniker": "GameMain.cs",
               "ToolTip": "C:\\Git\\_git\\26310048_suyeon_GameCraft\\src\\ShootingApple\\GameMain.cs",
               "RelativeToolTip": "GameMain.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAywB4AAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAYwCwAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-16T10:11:52.162Z",
               "EditorCaption": ""
